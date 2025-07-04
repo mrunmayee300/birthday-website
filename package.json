@@ -1,0 +1,24 @@
+{
+  "name": "birthday-mission",
+  "version": "1.0.0",
+  "description": "Interactive Birthday Mission Website",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "dev": "parcel index.html --open"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "framer-motion": "^10.16.4",
+    "styled-components": "^6.1.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@parcel/transformer-sass": "^2.9.3",
+    "parcel": "^2.9.3",
+    "sass": "^1.69.0"
+  },
+  "browserslist": "> 0.5%, last 2 versions, not dead"
+} 
