@@ -154,7 +154,6 @@ const CollageTitle = styled.h3`
 `;
 
 
-
 const RestartButton = styled(motion.button)`
   background: linear-gradient(45deg, #4a90e2, #00d4ff);
   border: none;
@@ -207,12 +206,12 @@ const Finale = ({ missionData }) => {
   };
 
   const photoData = [
-    { id: 1, delay: 0.1, photoUrl: "photos\photo1.jpg" },
-    { id: 2, delay: 0.2, photoUrl: "photos\photo2.jpg" },
-    { id: 3, delay: 0.3, photoUrl: "photos\photo3.jpg" },
-    { id: 4, delay: 0.4, photoUrl: "photos\photo4.jpg" },
-    { id: 5, delay: 0.5, photoUrl: "photos\photo5.jpg" },
-    { id: 6, delay: 0.6, photoUrl: "photos\photo6.jpg" }
+    { id: 1, delay: 0.1, photoUrl: require("../../public/photo1.jpg") },
+    { id: 2, delay: 0.2, photoUrl: require("../../public/photo2.jpg") },
+    { id: 3, delay: 0.3, photoUrl: require("../../public/photo3.jpg") },
+    { id: 4, delay: 0.4, photoUrl: require("../../public/photo4.jpg") },
+    { id: 5, delay: 0.5, photoUrl: require("../../public/photo5.jpg") },
+    { id: 6, delay: 0.6, photoUrl: require("../../public/photo6.jpg") }
   ];
 
   return (
@@ -285,59 +284,7 @@ const Finale = ({ missionData }) => {
 
 
         
-        <CollageTitle
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 3.5 }}
-        >
-          📸 SAY CHEESE! 📸
-        </CollageTitle>
-        
-        <PhotoCollage
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 3.8 }}
-        >
-          {photoData.map((photo, index) => (
-            <PhotoFrame
-              key={photo.id}
-              initial={{ opacity: 0, scale: 0, rotate: -180 }}
-              animate={{ opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ 
-                duration: 0.6, 
-                delay: 3.8 + (index * 0.1),
-                type: "spring",
-                stiffness: 200
-              }}
-              whileHover={{ 
-                scale: 1.1, 
-                rotate: 5,
-                boxShadow: "0 0 30px rgba(74, 144, 226, 0.6)"
-              }}
 
-            >
-              <PhotoPlaceholder>
-                {photo.photoUrl ? (
-                  <img 
-                    src={photo.photoUrl} 
-                    alt={`Photo ${photo.id}`}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      borderRadius: '13px'
-                    }}
-                  />
-                ) : (
-                  <>
-                    <div className="icon">📸</div>
-                    <div>Photo {photo.id}</div>
-                  </>
-                )}
-              </PhotoPlaceholder>
-            </PhotoFrame>
-          ))}
-        </PhotoCollage>
         
         {showRestart && (
           <RestartButton

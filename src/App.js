@@ -44,7 +44,7 @@ const BackgroundParticles = styled.div`
 
 
 function App() {
-  const [currentLevel, setCurrentLevel] = useState(0); // Start from welcome screen
+  const [currentLevel, setCurrentLevel] = useState(0); // Start with welcome screen
   const [isLoading, setIsLoading] = useState(true);
   const [missionData, setMissionData] = useState({
     agentName: 'Mama',
